@@ -1,0 +1,27 @@
+    #names {
+        background-color: #c3c7cb;
+        border: 2px outset #c3c7cb;
+        border-radius: 3px;
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 10px;
+        text-shadow: 1px 1px 0px #ffffff;
+        box-shadow: 2px 2px 0px #8e9194;
+        cursor: pointer;
+      }
+
+    #home, #play-pause-button, #name {
+        background-color: #c3c7cb;
+        border: 2px outset #c3c7cb;
+        border-radius: 3px;
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 10px;
+        text-shadow: 1px 1px 0px #ffffff;
+        box-shadow: 2px 2px 0px #8e9194;
+        cursor: pointer;
+  
+      }
+

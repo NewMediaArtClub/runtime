@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <head>
+    <title>Dropdown Menu Example</title>
+    <script>
+      function goToPage() {
+        var e = document.getElementById("names");
+        var selectedOption = e.options[e.selectedIndex].value;
+       
+        <!-- When artist is selected go to their page--> 
+        
+        if (selectedOption === "Adam") {
+          window.location.href = "Adam.html";
+        }
+          if (selectedOption === "Anoushka") {
+          window.location.href = "Anoushka.html";
+        }
+      
+           if (selectedOption === "Gino") {
+          window.location.href = "Gino.html";
+        }
+      
+
+           if (selectedOption === "Les") {
+          window.location.href = "Les.html";
+        }
+      
+      
+           if (selectedOption === "Leonie") {
+          window.location.href = "Leonie.html";
+        }
+      
+      
+           if (selectedOption === "Khush") {
+          window.location.href = "Khush.html";
+        }
+      }
+      
+      
+  
+    </script>
+  </head>
+  <body>
+    <label for="names">Select an Artist:</label>
+    <select id="names" name="names" onchange="goToPage()">
+      <option value="">Name</option>
+      <option value="Adam">Adam Stephenson</option>
+      <option value="Anoushka">Anoushka Goodwin</option>
+      <option value="Gino">Gino Attwood</option>
+      <option value="Khush">Khush Khali</option>
+      <option value="Leonie">Leonie Dubarry-Gurr</option>
+      <option value="Les">Les Hayden</option>
+
+    </select>
+  </body>
+</html>

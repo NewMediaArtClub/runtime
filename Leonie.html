@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <head>
+    <title>Video Background</title>
+    <style>
+      /* This rule sets the height and padding of the HTML and body elements to 100%, and removes margin and padding */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      /* This rule positions the video element fixed to the top-left corner of the viewport and sets its dimensions to 100% x 100%, with the object-fit property set to "cover" to ensure the video fills the viewport */
+      #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+         z-index: -1;
+      }
+      /* This rule positions the content container relative to the video element and adds padding */
+      #content {
+        position: relative;
+        z-index: -1;
+        padding: 20px;
+      }
+      /* This rule positions the button container absolute at the bottom center of the page and centers it horizontally */
+      #button-container {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      /* This rule sets up the layout for the container and its child items, giving each item a width of 50% and a fixed height, and applying a border */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 25vh;
+        z-index: 1;
+      }
+      .item {
+        flex-basis: 50%;
+        height: 100px;
+        box-sizing: border-box;
+        height: 40vh;
+         text-align: right; /* Align text to the right-hand side */
+      }
+      
+      /* sets the size of the GIfs*/
+      img {
+        width: 80%; /* Set the width of the image to 100% of the container */
+        height: auto%; /* Scale the height of the image proportionally to its width */
+        font-align: right;
+      }
+      
+      /* This bit below is mad typing CSS   */
+
+  #typewriter {
+        color: white; /* add this line to change text color to white */
+        font-family: monospace;
+        font-size: 15px;
+        font-align: left; 
+        font-weight: bold;
+        white-space: pre-wrap;
+        overflow: hidden;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 7.5s steps(90, end), blink-caret .75s step-end infinite;
+      }
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      /*CSS typing stops here */
+      
+      /* Style the container for the typewriter effect */
+.typewriter-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
+  padding: 2px;
+}
+      
+    </style>
+  </head>
+  <body>
+    <!-- This video element provides the video background, with a source specified using a URL and the video/mp4 MIME type -->
+    <video id="video-background" autoplay loop>
+      <source src="https://cdn.glitch.global/5f7fb0f0-17a4-4ea6-b7ce-5bd8793f2de3/KhushSm.mp4?v=1676883037740" type="video/mp4" preload="auto">
+      <!-- This message will display if the browser does not support the video tag -->
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- This div contains the item containers -->
+    <div class="container">
+    
+      <!-- This div is for the top-left item container-->
+      <div class="item" height="200"> 
+         <br>
+        <div class="typewriter-container">
+        <div id="typewriter">
+        
+  <p>I'm not sure how the code works yet ha. Ahgh. Chaos is cool. </p>
+  <p>I didn’t expect to be completely addicted to this, it’s like playing the best game. I love how spontaneous and instant it is. I have always been terrified of coding workshops but this has been a beautiful learning curve. </p>
+  <p>I'm in! </p>
+          </div> </div>
+
+      </div>
+      
+      <!-- This div is for the top-right item container -->
+      <div class="item">
+         <br>
+        <button id="name">Leonie Dubary-Grr</button>
+        <br>
+         <button id="home">home</button>
+        <button id="play-pause-button">Run</button>
+       
+      </div>
+      
+      <!-- This div is for the bottom-left item container -->
+      <div class="item">
+ 
+
+
+
+          
+        
+        </div>
+
+        
+      </div>
+     
+      
+      <!-- This div is for the bottom-right item container -->
+      <div class="item">
+    
+    
+      </div>
+    </div>
+
+    <!-- This div contains the button controls for the video background -->
+    <div id="button-container">
+
+    <script>
+      //make elements into js variables 
+      var video = document.getElementById("video-background");
+      var playPauseButton = document.getElementById("play-pause-button");
+      var home = document.getElementById("home");
+      
+      //play/pause functionality 
+      playPauseButton.addEventListener("click", function() {
+        if (video.paused) {
+          video.play();
+          playPauseButton.textContent = "Stop";
+        } else {
+          video.pause();
+          playPauseButton.textContent = "Run";
+        }
+      });
+      
+      //return to home screen 
+           home.addEventListener("click", function() {
+     window.location.href = "index.html";
+      });
+      
+      
+      const pTags = document.querySelectorAll('#typewriter p');
+
+      
+      //typewriter code 
+let delay = 0;
+
+pTags.forEach(p => {
+  const text = p.innerText;
+  p.innerText = '';
+  
+  for (let i = 0; i < text.length; i++) {
+    setTimeout(() => {
+      p.innerText += text[i];
+    }, delay);
+    
+    delay += 100; // adjust typing speed here
+  }
+  
+  setTimeout(() => {
+    p.style.opacity = 1;
+  }, delay + 1000); // adjust delay before next paragraph starts here
+});
+
+      
+      
+    </script>
+  </body>
+</html>
