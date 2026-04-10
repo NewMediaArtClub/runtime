@@ -88,10 +88,9 @@
     </style>
   </head>
   <body>
-    <!-- This video element provides the video background, with a source specified using a URL and the video/mp4 MIME type -->
+    <!-- This video element provides the video background -->
     <video id="video-background" autoplay loop>
-      <source src="https://cdn.glitch.global/5f7fb0f0-17a4-4ea6-b7ce-5bd8793f2de3/KhushSm.mp4?v=1676883037740" type="video/mp4" preload="auto">
-      <!-- This message will display if the browser does not support the video tag -->
+      <source src="https://raw.githubusercontent.com/NewMediaArtClub/runtime/main/Leonie_4.mp4" type="video/mp4" preload="auto">
       Your browser does not support the video tag.
     </video>
 
@@ -123,22 +122,10 @@
       
       <!-- This div is for the bottom-left item container -->
       <div class="item">
- 
-
-
-
-          
-        
-        </div>
-
-        
       </div>
-     
-      
+
       <!-- This div is for the bottom-right item container -->
       <div class="item">
-    
-    
       </div>
     </div>
 
@@ -146,12 +133,10 @@
     <div id="button-container">
 
     <script>
-      //make elements into js variables 
       var video = document.getElementById("video-background");
       var playPauseButton = document.getElementById("play-pause-button");
       var home = document.getElementById("home");
       
-      //play/pause functionality 
       playPauseButton.addEventListener("click", function() {
         if (video.paused) {
           video.play();
@@ -162,37 +147,30 @@
         }
       });
       
-      //return to home screen 
-           home.addEventListener("click", function() {
-     window.location.href = "index.html";
+      home.addEventListener("click", function() {
+        window.location.href = "index.html";
       });
-      
       
       const pTags = document.querySelectorAll('#typewriter p');
 
-      
-      //typewriter code 
-let delay = 0;
+      let delay = 0;
 
-pTags.forEach(p => {
-  const text = p.innerText;
-  p.innerText = '';
-  
-  for (let i = 0; i < text.length; i++) {
-    setTimeout(() => {
-      p.innerText += text[i];
-    }, delay);
-    
-    delay += 100; // adjust typing speed here
-  }
-  
-  setTimeout(() => {
-    p.style.opacity = 1;
-  }, delay + 1000); // adjust delay before next paragraph starts here
-});
-
-      
-      
+      pTags.forEach(p => {
+        const text = p.innerText;
+        p.innerText = '';
+        
+        for (let i = 0; i < text.length; i++) {
+          setTimeout(() => {
+            p.innerText += text[i];
+          }, delay);
+          
+          delay += 100;
+        }
+        
+        setTimeout(() => {
+          p.style.opacity = 1;
+        }, delay + 1000);
+      });
     </script>
   </body>
 </html>
